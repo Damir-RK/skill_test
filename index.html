@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b16">
+  <meta name="description" content="One click, one wisdom. A tiny pixel hero keeps you company while you explore Claude Code.">
+  <title>One Click, One Wisdom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="scene" aria-hidden="true">
+    <div class="orbit orbit--outer"></div>
+    <div class="orbit orbit--inner"></div>
+    <div class="ambient ambient--blue"></div>
+    <div class="ambient ambient--rose"></div>
+    <div class="stars"></div>
+  </div>
+
+  <header class="topline" aria-label="Page information">
+    <a class="wordmark" href="#home" aria-label="One click, one wisdom home">
+      <span class="wordmark__mark" aria-hidden="true">✳</span>
+      <span>tiny field notes</span>
+    </a>
+    <span class="edition">NO. 001 <span aria-hidden="true">/</span> CODE EDITION</span>
+  </header>
+
+  <main id="home" class="hero">
+    <div class="eyebrow"><span class="eyebrow__dot"></span> A LITTLE CLARITY, ON THE FLY</div>
+    <h1>One click,<br><span>one wisdom.</span></h1>
+    <p class="counter" id="counter" aria-live="polite">0 wisdoms opened</p>
+    <p class="intro">Good ideas have a way of finding you.</p>
+    <div class="scroll-cue" aria-hidden="true">
+      <span class="scroll-cue__line"></span>
+      <span>LET THE CURIOSITY DRIFT</span>
+      <span class="scroll-cue__line"></span>
+    </div>
+  </main>
+
+  <aside class="tip" id="tip" role="status" aria-live="polite" hidden>
+    <span class="tip__text" id="tip-text" lang="ru"></span>
+    <span class="tip__number" id="tip-number"></span>
+  </aside>
+
+  <div class="mascot" id="mascot" aria-label="A tiny pixel hero, following your cursor">
+    <div class="mascot__shadow" aria-hidden="true"></div>
+    <div class="mascot__float" aria-hidden="true">
+      <svg class="mascot__art" viewBox="0 0 32 36" role="img" aria-labelledby="bot-title">
+        <title id="bot-title">Tiny pixel superhero robot</title>
+        <!-- antenna and helmet -->
+        <g shape-rendering="crispEdges">
+          <rect x="15" y="0" width="2" height="3" fill="#65e4ff"/>
+          <rect x="14" y="3" width="4" height="2" fill="#b8f5ff"/>
+          <rect x="8" y="5" width="16" height="2" fill="#11172b"/>
+          <rect x="5" y="7" width="22" height="2" fill="#11172b"/>
+          <rect x="3" y="9" width="26" height="2" fill="#11172b"/>
+          <rect x="2" y="11" width="28" height="8" fill="#11172b"/>
+          <rect x="4" y="9" width="24" height="2" fill="#167fb3"/>
+          <rect x="6" y="7" width="20" height="2" fill="#167fb3"/>
+          <rect x="5" y="11" width="22" height="6" fill="#167fb3"/>
+          <rect x="5" y="12" width="22" height="4" fill="#e64c66"/>
+          <rect x="7" y="12" width="5" height="2" fill="#0a1425"/>
+          <rect x="20" y="12" width="5" height="2" fill="#0a1425"/>
+          <rect x="8" y="12" width="3" height="1" fill="#dffaff"/>
+          <rect x="21" y="12" width="3" height="1" fill="#dffaff"/>
+          <rect x="13" y="14" width="6" height="1" fill="#f77b88"/>
+          <rect x="7" y="16" width="18" height="2" fill="#ff7184"/>
+          <rect x="9" y="17" width="14" height="2" fill="#11172b"/>
+          <!-- web-like pixel seams -->
+          <rect x="15" y="9" width="2" height="2" fill="#ff9aa5"/>
+          <rect x="14" y="11" width="1" height="2" fill="#ff9aa5"/>
+          <rect x="17" y="11" width="1" height="2" fill="#ff9aa5"/>
+          <rect x="12" y="15" width="2" height="1" fill="#ff9aa5"/>
+          <rect x="18" y="15" width="2" height="1" fill="#ff9aa5"/>
+          <!-- neck, torso and arms -->
+          <rect x="13" y="19" width="6" height="2" fill="#f1c3a1"/>
+          <rect x="10" y="21" width="12" height="2" fill="#11172b"/>
+          <rect x="7" y="23" width="18" height="7" fill="#11172b"/>
+          <rect x="9" y="22" width="14" height="7" fill="#167fb3"/>
+          <rect x="12" y="23" width="8" height="4" fill="#126a9b"/>
+          <rect x="14" y="23" width="4" height="4" fill="#e64c66"/>
+          <rect x="13" y="24" width="6" height="1" fill="#ff9aa5"/>
+          <rect x="15" y="24" width="2" height="2" fill="#ffb7be"/>
+          <rect x="4" y="22" width="4" height="7" fill="#11172b"/>
+          <rect x="3" y="24" width="4" height="4" fill="#e64c66"/>
+          <rect x="24" y="22" width="4" height="7" fill="#11172b"/>
+          <rect x="25" y="24" width="4" height="4" fill="#e64c66"/>
+          <rect x="3" y="28" width="4" height="2" fill="#65e4ff"/>
+          <rect x="25" y="28" width="4" height="2" fill="#65e4ff"/>
+          <!-- legs and boots -->
+          <rect x="9" y="29" width="6" height="4" fill="#11172b"/>
+          <rect x="17" y="29" width="6" height="4" fill="#11172b"/>
+          <rect x="8" y="32" width="7" height="2" fill="#e64c66"/>
+          <rect x="17" y="32" width="7" height="2" fill="#e64c66"/>
+          <rect x="7" y="34" width="8" height="2" fill="#65e4ff"/>
+          <rect x="17" y="34" width="8" height="2" fill="#65e4ff"/>
+          <!-- highlights -->
+          <rect x="6" y="9" width="2" height="1" fill="#65e4ff"/>
+          <rect x="24" y="9" width="2" height="1" fill="#65e4ff"/>
+          <rect x="10" y="22" width="2" height="1" fill="#b8f5ff"/>
+          <rect x="20" y="22" width="2" height="1" fill="#b8f5ff"/>
+        </g>
+      </svg>
+    </div>
+    <span class="mascot__spark mascot__spark--one" aria-hidden="true">✦</span>
+    <span class="mascot__spark mascot__spark--two" aria-hidden="true">·</span>
+  </div>
+
+  <footer class="footer">
+    <span>MADE FOR THE IN-BETWEEN MOMENTS</span>
+    <a class="docs-link" href="https://code.claude.com/docs" target="_blank" rel="noopener noreferrer">OFFICIAL DOCS ↗</a>
+    <span class="footer__status"><span class="footer__pulse"></span> ALL SYSTEMS CURIOUS</span>
+  </footer>
+</body>
+</html>
